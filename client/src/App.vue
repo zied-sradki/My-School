@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheTopbar @togglenav="navOpen = !navOpen" />
+    <TheSidebar :open="navOpen" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheTopbar from "./components/TheTopBar";
+import TheSidebar from "./components/TheSideBar";
 
 export default {
-  name: 'App',
+  name: "App",
+  data: () => {
+    return {
+      navOpen: false,
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    TheTopbar,
+    TheSidebar,
+  },
+};
 </script>
 
-<style>
-#app {
+<style lang="scss">
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  background: url("./assets/class1.jpg") center center;
+  background-size: cover;
 }
 </style>
