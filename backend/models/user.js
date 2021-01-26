@@ -12,14 +12,16 @@ const userSchema = new Schema({
     type: String,
     unique: true,
   },
-
-  password: {
-    type: String,
-  },
   childId: {
     type: String,
     unique: true,
   },
+  password: {
+    type: String,
+  },
+  role:{
+   type: String,
+  }
 });
 
 module.exports = mongoose.model("users", userSchema);
