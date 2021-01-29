@@ -154,6 +154,8 @@
 <script>
 import axios from "axios";
 import { mdiAccount, mdiAccountOutline, mdiHome } from "@mdi/js";
+//sets a cookie for the login for storage
+const cookie = require("js-cookie");
 export default {
   computed: {
     passwordMatch() {
@@ -171,17 +173,21 @@ export default {
     validate() {
       if (this.$refs.loginForm.validate()) {
         axios
-          .post("http://localhost:5000/api/auth", {
+          .post("http://localhost:7000/api/auth", {
             email: this.loginEmail,
             password: this.loginPassword,
           })
           .then((response) => {
+            cookie.set("name", response.data.username);
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("messangerId", response.data.messangerId);
+            localStorage.setItem("Username", response.data.username);
             this.$router.push("/");
+            window.location.reload();
           });
       } else {
         axios
-          .post("http://localhost:5000/api/register", {
+          .post("http://localhost:7000/api/register", {
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
@@ -245,7 +251,7 @@ export default {
 </script>
 <style>
 .v-application .deep-purple.accent-4 {
- 
+  background-color: #0e0e0e !important;
   border-color: #070707 !important;
 }
 .v-application .purple.darken-4 {

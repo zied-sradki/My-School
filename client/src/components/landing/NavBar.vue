@@ -6,7 +6,7 @@
     <div class="container" id="nav1">
       <div class="d-flex align-items-center">
         <div class="site-logo">
-          <a href="index.html" class="d-block">
+          <a href="#" class="d-block">
             <img src="images/logo.png" alt="Image" class="img-fluid" />
           </a>
         </div>
@@ -24,7 +24,7 @@
                 >
               </li>
               <li class="">
-                <a href="#Teachers" class="nav-link text-left">Our Teachers</a>
+                <a href="#Teachers" class="nav-link text-left">Our Team</a>
               </li>
               <li class="">
                 <a href="#News" class="nav-link text-left">News & Updates</a>
@@ -292,7 +292,6 @@ export default {
 .sticky-wrapper.is-sticky .site-navbar .site-menu > li.active > a {
   color: #51be78;
 }
-
 /* Navbar */
 .site-logo {
   position: relative;
@@ -306,7 +305,6 @@ export default {
 .site-logo a {
   color: #000;
 }
-
 .site-mobile-menu {
   width: 300px;
   position: fixed;

@@ -3,6 +3,7 @@ const router = express.Router();
 const app = express();
 app.use(express.json());
 const Contact = require("../../models/Contact");
+
 router.post("/ContactUs", async (req, res) => {
   await Contact.create(
     {
@@ -17,5 +18,10 @@ router.post("/ContactUs", async (req, res) => {
       }
     }
   );
+});
+router.get("/ContactUs", async (req, res) => {
+  let contactadmins = await Contact.find();
+  console.log(contactadmins, "contactadmins");
+  res.json(contactadmins);
 });
 module.exports = router;

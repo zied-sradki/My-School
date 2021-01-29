@@ -79,7 +79,6 @@ export default {
 .hero-slide .owl-dots .owl-dot.active > span {
   background: #fff;
 }
-
 .owl-slide-3,
 .owl-slide {
   position: relative;
@@ -150,11 +149,9 @@ export default {
 .owl-slide .owl-dots .owl-dot.active > span {
   background: #51be78;
 }
-
 .owl-slide .owl-nav {
   display: none;
 }
-
 /* Blocks */
 .intro-section {
   position: relative;
@@ -162,17 +159,15 @@ export default {
 .intro-section,
 .intro-section .container .row {
   height: 113vh;
-  background-size:contain;
+  background-size: contain;
 }
 .intro-section:before {
   content: "";
   position: absolute;
   height: 109%;
   width: 100%;
-
   opacity: 0.7;
   border-bottom-right-radius: 0px;
-
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -192,7 +187,7 @@ export default {
   max-width: 400px;
 }
 .owl-carousel {
-    display: block !important;
-   margin-top: 105px !important;
+  display: block !important;
+  margin-top: 105px !important;
 }
 </style>

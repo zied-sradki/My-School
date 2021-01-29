@@ -63,7 +63,6 @@ export default {
 .section-title-underline.style-2 span {
   border-color: #51be78;
 }
-
 .section-bg {
   background-size: cover;
   background-position: center;

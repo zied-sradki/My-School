@@ -11,16 +11,16 @@
       <div class="row">
         <div id="app">
           <v-app id="inspire">
-            <v-card class="mx-auto" max-width="344">
+            <v-card class="mx-auto" max-width="344" id="cardmove">
               <v-img
-                src="images/person_1.jpg"
+                src="images/SL10.jpg"
                 alt="Image"
                 class="img-fluid"
                 id="serv_img"
               >
               </v-img>
               <v-card-title>
-                SERVICE
+                <a href="service">Service</a>
               </v-card-title>
               <v-card-subtitle>
                 Consultation services to private school teachers and parents for
@@ -33,17 +33,16 @@
             <v-app id="inspire">
               <v-card class="mx-auto" max-width="344">
                 <v-img
-                  src="images/SL1.jpg"
+                  src="images/SL9.jpg"
                   alt="Image"
                   class="img-fluid"
                   id="serv_img"
                 ></v-img>
                 <v-card-title>
-                  EVENT
+                  <a href="event">Event</a>
                 </v-card-title>
                 <v-card-subtitle>
-                  Consultation services to private school teachers and parents
-                  for up to one hour a month...
+                  Creating a greater sense of community within the school, improving the climate and culture throughout the building. Our ultimate goal is to allow students to have higher self-esteem and courage.
                 </v-card-subtitle>
               </v-card>
             </v-app>
@@ -52,13 +51,13 @@
               <v-app id="inspire">
                 <v-card class="mx-auto" max-width="344">
                   <v-img
-                    src="images/SL2.jpg"
+                    src="images/SL12.jpg"
                     alt="Image"
                     class="img-fluid"
                     id="serv_img"
                   ></v-img>
                   <v-card-title>
-                    Activity
+                    <a href="activity">Activity</a>
                   </v-card-title>
                   <v-card-subtitle>
                     Consultation services to private school teachers and parents
@@ -96,7 +95,6 @@ export default {
 .site-section.site-section-sm {
   padding: 4em 0;
 }
-
 .site-section-heading {
   padding-bottom: 20px;
   margin-bottom: 0px;
@@ -118,7 +116,6 @@ export default {
   font-size: 1.3rem;
   color: #000;
 }
-
 .feature-1 .icon-wrapper,
 .person .icon-wrapper {
   position: relative;
@@ -177,5 +174,12 @@ export default {
 }
 #serv_img {
   background-size: contain;
+}
+div#inspire {
+  margin-top: 95px;
+  margin-left: -26px;
+}
+div#cardmove {
+  margin-top: -153px;
 }
 </style>

@@ -1,24 +1,19 @@
 <template>
-  <div class="background" id="app">
-    
+  <div id="app">
     <TheSideBar />
-    <slide />
     <router-view></router-view>
   </div>
 </template>
-<script>
 
+<script>
 import TheSideBar from "./components/TheSideBar.vue";
-import slide from "./components/slide.vue";
 export default {
   name: "App",
   data: () => {
     return {};
   },
   components: {
-   
     TheSideBar,
-    slide,
   },
 };
 </script>
@@ -35,6 +30,10 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // background: url("./assets/class1.jpg") center center;
+}
+html {
+  overflow: scroll !important;
 }
 
 #app {
@@ -42,7 +41,4 @@ body {
   min-height: 100vh;
   background-size: cover;
 }
-// .background {
-//   background: url("./assets/class1.jpg") center center;
-// }
 </style>

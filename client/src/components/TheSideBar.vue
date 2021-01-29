@@ -1,6 +1,14 @@
 <template>
-  <div class="hidden">
-    <vs-sidebar absolute hover-expand reduce v-model="active" open>
+  <div v-if="this.name" class="hidden" id="sidebar">
+    <vs-sidebar
+      id="sidd"
+      absolute
+      reduce
+      hover-expand
+      v-model="active"
+      open
+      class="sideside"
+    >
       <template #logo>
         <vs-avatar>
           <img
@@ -9,53 +17,32 @@
           />
         </vs-avatar>
       </template>
-      <vs-sidebar-item id="home">
-        <template #icon>
-          <i class="bx bx-home" @click="redirectHome"></i>
-        </template>
-        Home
-      </vs-sidebar-item>
-      <vs-sidebar-item id="Profile">
-        <template #icon>
-          <i class="bx bxs-user-rectangle" @click="redirectProfil"></i>
-        </template>
-        Profile
-      </vs-sidebar-item>
-      <vs-sidebar-item id="chat">
-        <template #icon>
-          <i class="bx bx-chat" @click="redirectChatContainer"></i>
-        </template>
-        Chat
-      </vs-sidebar-item>
-      <vs-sidebar-group>
-        <template #header>
-          <vs-sidebar-item arrow>
-            <template #icon>
-              <i class="bx bx-group"></i>
-            </template>
-            Social media
-          </vs-sidebar-item>
-        </template>
-
-        <vs-sidebar-item id="Instagram">
+      <h2>{{ this.name }}</h2>
+      <span @click="redirectHome">
+        <vs-sidebar-item id="home">
           <template #icon>
-            <i class="bx bxl-instagram"></i>
+            <i class="bx bx-home"></i>
           </template>
-          Instagram
+          Home
         </vs-sidebar-item>
-        <vs-sidebar-item id="twitter">
+      </span>
+      <span @click="redirectProfil">
+        <vs-sidebar-item id="Profile">
           <template #icon>
-            <i class="bx bxl-twitter"></i>
+            <i class="bx bxs-user-rectangle"></i>
           </template>
-          Twitter
+          Teachers
         </vs-sidebar-item>
-        <vs-sidebar-item id="Facebook">
+      </span>
+      <span @click="redirectChatContainer">
+        <vs-sidebar-item id="chat">
           <template #icon>
-            <i class="bx bxl-facebook"></i>
+            <i class="bx bx-chat"></i>
           </template>
-          Facebook
+          Chat
         </vs-sidebar-item>
-      </vs-sidebar-group>
+      </span>
+      
 
       <vs-sidebar-item id="Calendar">
         <template #icon>
@@ -63,35 +50,23 @@
         </template>
         Calendar
       </vs-sidebar-item>
-      <vs-sidebar-item id="Event">
-        <template #icon>
-          <i class="bx bxs-calendar-event" @click="redirectEvent"></i>
-        </template>
-        Event
-      </vs-sidebar-item>
-      <vs-sidebar-item id="shopping">
-        <template #icon>
-          <i class="bx bxs-shopping-bags"></i>
-        </template>
-        Shopping
-      </vs-sidebar-item>
-      <vs-sidebar-item id="Contact Us">
-        <template #icon>
-          <i class="bx bx-support" @click="redirectContactUs"></i>
-        </template>
-        Contact Us
-      </vs-sidebar-item>
-      <template #footer>
-        <vs-row justify="space-between">
-          <vs-avatar badge-color="danger" badge-position="top-right">
-            <i class="bx bx-bell"></i>
+      <span @click="redirectEvent"
+        ><vs-sidebar-item id="Event">
+          <template #icon>
+            <i class="bx bxs-calendar-event"></i>
+          </template>
+          Event
+        </vs-sidebar-item>
+      </span>
 
-            <template #badge>
-              28
-            </template>
-          </vs-avatar>
-        </vs-row>
-      </template>
+      <span @click="redirectContactUs">
+        <vs-sidebar-item id="Contact Us">
+          <template #icon>
+            <i class="bx bx-support"></i>
+          </template>
+          Contact Us
+        </vs-sidebar-item>
+      </span>
     </vs-sidebar>
   </div>
 </template>
@@ -99,23 +74,40 @@
 export default {
   data: () => ({
     active: "home",
+    name: "",
   }),
   methods: {
     redirectHome() {
+      console.log(this.name);
       this.$router.push("/");
     },
     redirectProfil() {
       this.$router.push("/Profil");
     },
     redirectChatContainer() {
-      this.$router.push("/ChatContainer");
-    },
-    redirectEvent() {
-      this.$router.push("/Event");
+      this.$router.push("/ChatStructure");
     },
     redirectContactUs() {
       this.$router.push("/ContactUs");
     },
+    redirectEvent() {
+      this.$router.push("/events");
+    },
+  },
+  mounted() {
+    this.name = localStorage.getItem("Username");
   },
 };
 </script>
+<style>
+h2 {
+  margin-left: 55px;
+  margin-bottom: 10px;
+}
+.sideside {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+}
+</style>
